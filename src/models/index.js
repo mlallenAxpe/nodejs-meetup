@@ -1,6 +1,6 @@
 const models = {
-  MeetupSchema: require('./meetupModel'),
-  UserSchema: require('./userModel')
+  Meetup: require('./meetupModel'),
+  User: require('./userModel')
 }
 
 module.exports = models
