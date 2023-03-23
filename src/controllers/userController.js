@@ -15,17 +15,17 @@ const getUser = catchAsync(async (req, res) => {
 })
 
 const getFavorites = catchAsync(async (req, res) => {
-  const favorites = await userService.getUserFavorites(req.body.id)
+  const favorites = await userService.getUserFavorites(req.params.id)
   res.status(httpStatus[200]).send(favorites)
 })
 
 const updateUser = catchAsync(async (req, res) => {
-  const user = await userService.updateUser(req.body.id, req.body.update)
+  const user = await userService.updateUser(req.params.id, req.body.update)
   res.status(httpStatus[200]).send(user)
 })
 
 const updateFavorites = catchAsync(async (req, res) => {
-  const user = await userService.updateUser(req.body.id, req.body.favorites)
+  const user = await userService.updateUser(req.params.id, req.body.favorites)
   res.status(httpStatus[200]).send(user)
 })
 
