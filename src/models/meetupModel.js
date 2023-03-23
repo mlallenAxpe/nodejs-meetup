@@ -10,7 +10,7 @@ const meetupSchema = mongoose.Schema({
     required: true
   }, 
   image: {
-    type: URL,
+    type: String,
     required: true
   },
   address: {
