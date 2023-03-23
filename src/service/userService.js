@@ -21,6 +21,11 @@ const getUserByEmail = async (email) => {
   return user
 }
 
+const getUserById = async (id) => {
+  const user = await User.findById(id)
+  return user
+}
+
 const getUserFavorites = async (id) => {
   const user = await User.findOne({ id });
   return user.favorites
@@ -40,6 +45,7 @@ module.exports = {
   isEmailTaken,
   createUser,
   getUserByEmail,
+  getUserById,
   getUserFavorites,
   updateUser,
   updateFavorites

@@ -8,7 +8,9 @@ const createUser = catchAsync(async (req, res) => {
 })
 
 const getUser = catchAsync(async (req, res) => {
-  const user = await userService.getUserByEmail(req.body.email)
+  let user
+  if (req.params.id) user = await userService.getUserById(req.params.id)
+  else if (req.body.email) user = await userService.getUserByEmail(req.body.email)
   res.status(httpStatus[200]).send(user)
 })
 
