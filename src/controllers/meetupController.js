@@ -8,14 +8,14 @@ const createMeetup = catchAsync(async (req, res) => {
 })
 
 const updateMeetup = catchAsync(async (req, res) => {
-  const id = req.params.id
+  const id = req.params.meetupId
   const meetupBody = req.body
   const meetup = await meetupService.updateMeetup(id, meetupBody)
   res.status(httpStatus.OK).send(meetup)
 })
 
 const getMeetup = catchAsync(async (req, res) => {
-  const id = req.params.id
+  const id = req.params.meetupId
   const meetup = await meetupService.findMeetupById(id)
   res.status(httpStatus.OK).send(meetup)
 })

@@ -22,7 +22,7 @@ const getUser = {
 }
 const updateFavorites = {
   body: Joi.object().keys({
-    favorites: Joi.array().required
+    favorites: Joi.array().required()
   }),
   params: Joi.object().keys({
     userId: Joi.string().required()

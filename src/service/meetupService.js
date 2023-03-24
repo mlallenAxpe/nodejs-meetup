@@ -1,6 +1,6 @@
 const httpStatus = require('http-status')
 const { Meetup } = require('../models')
-const { APIError } = require('../utils/ApiError')
+const ApiError = require('../utils/ApiError')
 
 const createMeetup = async (meetupBody) => {
   const meetup = await Meetup.create(meetupBody)

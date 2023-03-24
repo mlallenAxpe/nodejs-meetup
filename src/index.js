@@ -12,7 +12,7 @@ const app = express();
 mongoose.connect('mongodb://127.0.0.1:27017/database')
 
 app.use(express.json())
-app.use('/', routes)
+app.use('/api', routes)
 app.use((req, res, next) => {
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
 });

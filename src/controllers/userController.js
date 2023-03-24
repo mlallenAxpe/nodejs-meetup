@@ -9,23 +9,23 @@ const createUser = catchAsync(async (req, res) => {
 
 const getUser = catchAsync(async (req, res) => {
   let user
-  if (req.params.id) user = await userService.getUserById(req.params.id)
+  if (req.params.userId) user = await userService.getUserById(req.params.userId)
   else if (req.body.email) user = await userService.getUserByEmail(req.body.email)
   res.status(httpStatus.OK).send(user)
 })
 
 const getFavorites = catchAsync(async (req, res) => {
-  const favorites = await userService.getUserFavorites(req.params.id)
+  const favorites = await userService.getUserFavorites(req.params.userId)
   res.status(httpStatus.OK).send(favorites)
 })
 
 const updateUser = catchAsync(async (req, res) => {
-  const user = await userService.updateUser(req.params.id, req.body.update)
+  const user = await userService.updateUser(req.params.userId, req.body)
   res.status(httpStatus.OK).send(user)
 })
 
 const updateFavorites = catchAsync(async (req, res) => {
-  const user = await userService.updateUser(req.params.id, req.body.favorites)
+  const user = await userService.updateUser(req.params.userId, req.body)
   res.status(httpStatus.OK).send(user)
 })
 

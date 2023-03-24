@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const meetupSchema = mongoose.Schema({
+const MeetupSchema = mongoose.Schema({
   title: {
     type: String,
     required: true
@@ -18,6 +18,6 @@ const meetupSchema = mongoose.Schema({
     required: true
   }
 })
-const Meetup = mongoose.model("Meetup", meetupSchema)
+const Meetup = mongoose.model("Meetup", MeetupSchema)
 
 module.exports = Meetup
